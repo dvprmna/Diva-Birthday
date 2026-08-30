@@ -1,0 +1,2355 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+.loader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #050505;
+
+    z-index: 9999;
+
+    transition: opacity 0.8s ease;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 650px;
+
+    padding: 30px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #333333;
+
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.05);
+
+    font-size: 14px;
+    line-height: 2;
+}
+
+.terminal p {
+    color: #bdbdbd;
+}
+
+
+/* =====================================================
+   LOADING BAR
+===================================================== */
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    margin: 20px 0;
+
+    background: #222222;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: #ffffff;
+
+    animation: loading 3s forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   SYSTEM READY
+===================================================== */
+
+.ready {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   TERMINAL BUTTON
+===================================================== */
+
+.terminal button {
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    background: transparent;
+
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.terminal button:hover {
+    background: #ffffff;
+    color: #000000;
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #050505 65%
+        );
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    flex-shrink: 0;
+}
+
+.code {
+    color: #666666;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 110px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    color: #777777;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: clamp(26px, 5vw, 55px);
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.version {
+    color: #777777;
+
+    font-size: 12px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   ACCESS INVITATION BUTTON
+===================================================== */
+
+.enter-btn {
+    display: inline-flex !important;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: transparent;
+
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative;
+    z-index: 10;
+}
+
+.enter-btn:hover {
+    background: #ffffff;
+    color: #000000;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+.hero .enter-btn {
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   HIDDEN INVITATION
+===================================================== */
+
+.invitation.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   INVITATION SECTION
+===================================================== */
+
+.invitation {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 65px 20px 60px;
+
+    background: #080808;
+
+    border-top: 1px solid #151515;
+
+    flex-shrink: 0;
+}
+
+.section-code {
+    color: #666666;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+.invitation h2 {
+    width: 100%;
+    max-width: 900px;
+
+    font-size: clamp(32px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
+}
+
+.invite-text {
+    width: 100%;
+    max-width: 650px;
+
+    color: #9a9a9a;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   EVENT CARD
+===================================================== */
+
+.event-card {
+    width: 100%;
+    max-width: 700px;
+
+    display: block;
+
+    border: 1px solid #333333;
+
+    background: #090909;
+}
+
+.event-item {
+    padding: 25px;
+
+    border-bottom: 1px solid #222222;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-item span {
+    display: block;
+
+    color: #666666;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.event-item h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   LOCATION BUTTON
+===================================================== */
+
+.location-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    background: transparent;
+
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    background: #ffffff;
+    color: #000000;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown-box {
+    width: 100%;
+    max-width: 800px;
+
+    display: block;
+
+    margin-top: 55px;
+
+    padding: 30px 25px;
+
+    border: 1px solid #252525;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d0d0d,
+            #080808
+        );
+
+    text-align: center;
+}
+
+.countdown-code {
+    color: #555555;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.countdown-box h3 {
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.countdown {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.time-box {
+    padding: 18px 10px;
+
+    border: 1px solid #252525;
+
+    background: #050505;
+}
+
+.time-box span {
+    display: block;
+
+    font-size: clamp(30px, 6vw, 55px);
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+}
+
+.time-box small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #555555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.system-status {
+    margin-top: 25px;
+
+    color: #555555;
+
+    font-size: 10px;
+}
+
+.system-status span {
+    color: #888888;
+}
+
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+.profile {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 55px 20px 65px;
+
+    background: #050505;
+
+    text-align: center;
+}
+
+.profile .section-code {
+    margin-bottom: 25px;
+}
+
+.profile-window {
+    width: 100%;
+    max-width: 850px;
+
+    border: 1px solid #333333;
+
+    background: #090909;
+
+    box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+
+/* =====================================================
+   PROFILE WINDOW HEADER
+===================================================== */
+
+.window-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 18px;
+
+    border-bottom: 1px solid #222222;
+
+    color: #666666;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   PROFILE CONTENT
+===================================================== */
+
+.profile-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+    padding: 45px;
+}
+
+
+/* =====================================================
+   PROFILE AVATAR
+===================================================== */
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #444444;
+
+    background:
+        radial-gradient(
+            circle,
+            #1a1a1a,
+            #050505
+        );
+
+    font-size: 38px;
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 255, 255, 0.03);
+
+    overflow: hidden;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: grayscale(100%);
+}
+
+.profile-avatar span {
+    animation: blink 2s infinite;
+}
+
+
+/* =====================================================
+   PROFILE INFO
+===================================================== */
+
+.profile-info {
+    flex: 1;
+
+    text-align: left;
+}
+
+.profile-label {
+    color: #555555;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    font-size: clamp(40px, 6vw, 65px);
+
+    letter-spacing: -3px;
+
+    margin-bottom: 18px;
+}
+
+.profile-description {
+    max-width: 500px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+}
+
+
+/* =====================================================
+   PROFILE STATS
+===================================================== */
+
+.profile-stats {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 25px;
+}
+
+.profile-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.profile-stats span {
+    color: #555555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.profile-stats strong {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   PROFILE TERMINAL
+===================================================== */
+
+.profile-terminal {
+    padding: 18px 25px;
+
+    border-top: 1px solid #222222;
+
+    text-align: left;
+
+    font-size: 10px;
+
+    line-height: 1.9;
+
+    color: #555555;
+}
+
+.profile-terminal p {
+    margin: 0;
+}
+
+.profile-terminal .cursor {
+    color: #aaaaaa;
+}
+
+
+/* =====================================================
+   BLINK
+===================================================== */
+
+@keyframes blink {
+    0%,
+    45% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+
+/* =====================================================
+   MEMORY DATABASE
+===================================================== */
+
+.memories {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 55px 20px 70px;
+
+    background: #080808;
+
+    border-top: 1px solid #151515;
+}
+
+.memories .section-code {
+    margin-bottom: 20px;
+}
+
+.memories h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(35px, 6vw, 65px);
+
+    letter-spacing: -3px;
+}
+
+.memory-intro {
+    width: 100%;
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   MEMORY WINDOW
+===================================================== */
+
+.memory-window {
+    width: 100%;
+    max-width: 850px;
+
+    border: 1px solid #333333;
+
+    background: #090909;
+
+    text-align: left;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   MEMORY HEADER
+===================================================== */
+
+.memory-header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #222222;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   FILE LIST
+===================================================== */
+
+.file-list {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   MEMORY FILE
+===================================================== */
+
+.memory-file {
+    width: 100%;
+
+    min-height: 100px;
+
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #1c1c1c;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.memory-file:last-child {
+    border-bottom: none;
+}
+
+.memory-file:hover {
+    background: #111111;
+}
+
+
+/* =====================================================
+   FILE ICON / IMAGE
+===================================================== */
+
+.file-icon {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #444444;
+
+    background: #050505;
+}
+
+.file-icon img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition: all 0.4s ease;
+}
+
+.memory-file:hover .file-icon img {
+    filter: grayscale(0%);
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   FILE INFORMATION
+===================================================== */
+
+.file-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.file-info strong {
+    color: #dddddd;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.file-info span {
+    color: #555555;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FILE SIZE
+===================================================== */
+
+.file-size {
+    color: #444444;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   MEMORY TERMINAL
+===================================================== */
+
+.memory-terminal {
+    padding: 20px 25px;
+
+    border-top: 1px solid #222222;
+
+    color: #555555;
+
+    font-size: 10px;
+
+    line-height: 1.9;
+
+    text-align: left;
+}
+
+.memory-terminal p {
+    margin: 0;
+}
+
+.memory-terminal .cursor {
+    color: #999999;
+}
+
+
+/* =====================================================
+   FINAL SYSTEM
+===================================================== */
+
+.final-system {
+    width: 100%;
+
+    padding: 5px 20px 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #050505;
+}
+
+.system-window {
+    width: 100%;
+    max-width: 850px;
+
+    border: 1px solid #333333;
+
+    background: #090909;
+
+    box-shadow:
+        0 0 50px rgba(255, 255, 255, 0.03);
+}
+
+.system-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #222222;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-align: left;
+}
+
+.system-content {
+    padding: 60px 40px;
+}
+
+.terminal-line {
+    color: #666666;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+    text-align: left;
+}
+
+.system-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 35px 0;
+
+    background: #222222;
+}
+
+.system-content h2 {
+    font-size: clamp(35px, 6vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.final-message {
+    max-width: 550px;
+
+    margin: 0 auto 40px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.accept-btn {
+    padding: 15px 28px;
+
+    background: transparent;
+
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.accept-btn:hover {
+    background: #ffffff;
+
+    color: #000000;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =====================================================
+   ACCEPT MESSAGE
+===================================================== */
+
+.accept-message {
+    display: none;
+
+    min-height: 20px;
+
+    margin-top: 25px;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+}
+
+.accept-message.show {
+    display: block;
+}
+
+
+/* =====================================================
+   INVITATION SYSTEM
+===================================================== */
+
+/* Tombol ACCESS INVITATION selalu terlihat */
+.enter-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Invitation awal bisa hidden */
+.invitation.hidden {
+    display: none !important;
+}
+
+/* Setelah hidden dihapus */
+.invitation:not(.hidden) {
+    display: flex !important;
+}
+
+
+/* =====================================================
+   EVENT DETAILS
+===================================================== */
+
+/* Sebelum ACCEPT */
+#event-details {
+    display: none !important;
+
+    width: 100%;
+    max-width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+
+    margin: 60px auto 0;
+
+    padding: 0 20px 80px;
+}
+
+/* Setelah ACCEPT */
+#event-details.show {
+    display: flex !important;
+}
+
+/* Section code */
+#event-details .section-code {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+/* Event Card */
+#event-details .event-card {
+    display: block !important;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+/* Event Item */
+#event-details .event-item {
+    width: 100%;
+
+    text-align: center;
+}
+
+/* Location */
+#event-details .location-btn {
+    display: inline-block !important;
+
+    margin: 30px auto 0;
+}
+
+/* Countdown */
+#event-details .countdown-box {
+    display: block !important;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 60px auto 0;
+
+    text-align: center;
+}
+
+#event-details .countdown-code,
+#event-details .countdown-box h3,
+#event-details .system-status {
+    text-align: center;
+}
+
+
+/* =====================================================
+   OPTIONAL SHOW EVENT SYSTEM
+===================================================== */
+
+.hidden-after-accept {
+    display: none;
+}
+
+.hidden-after-accept.show-event {
+    display: block;
+}
+
+.event-card.show-event {
+    display: block;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 50px auto 0;
+}
+
+.location-btn.show-event {
+    display: inline-block;
+
+    margin: 30px auto 0;
+}
+
+.countdown-box.show-event {
+    display: block;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 60px auto 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* LOADER */
+
+    .terminal {
+        width: 92%;
+
+        padding: 20px;
+
+        font-size: 11px;
+
+        line-height: 1.9;
+    }
+
+    .terminal button {
+        font-size: 11px;
+
+        padding: 11px 16px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100vh;
+
+        padding: 50px 18px;
+    }
+
+    .code {
+        font-size: 11px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 17vw, 80px);
+
+        letter-spacing: -4px;
+
+        margin-bottom: 35px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .hero h2 {
+        font-size: clamp(24px, 8vw, 38px);
+
+        letter-spacing: 2px;
+    }
+
+    .version {
+        font-size: 10px;
+
+        margin-bottom: 35px;
+    }
+
+    .enter-btn {
+        padding: 14px 22px;
+
+        font-size: 11px;
+    }
+
+
+    /* INVITATION */
+
+    .invitation {
+        padding: 55px 18px 60px;
+    }
+
+    .section-code {
+        font-size: 10px;
+    }
+
+    .invitation h2 {
+        font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .invite-text {
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        margin-bottom: 35px;
+    }
+
+    .event-item {
+        padding: 22px 18px;
+    }
+
+    .event-item h3 {
+        font-size: 15px;
+    }
+
+    .location-btn {
+        font-size: 11px;
+
+        padding: 13px 20px;
+    }
+
+
+    /* COUNTDOWN */
+
+    .countdown-box {
+        margin-top: 45px;
+
+        padding: 25px 15px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
+    .time-box {
+        padding: 15px 5px;
+    }
+
+    .time-box span {
+        font-size: 28px;
+    }
+
+    .time-box small {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .countdown-box h3 {
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* PROFILE */
+
+    .profile {
+        padding: 45px 18px 55px;
+    }
+
+    .profile-content {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 35px 22px;
+    }
+
+    .profile-avatar {
+        width: 140px;
+        height: 140px;
+
+        font-size: 30px;
+    }
+
+    .profile-info {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .profile-label {
+        font-size: 9px;
+    }
+
+    .profile-info h2 {
+        font-size: 48px;
+    }
+
+    .profile-description {
+        margin: auto;
+
+        font-size: 12px;
+    }
+
+    .profile-stats {
+        justify-content: center;
+
+        gap: 25px;
+    }
+
+    .window-header {
+        font-size: 9px;
+    }
+
+    .profile-terminal {
+        padding: 18px;
+
+        font-size: 9px;
+    }
+
+
+    /* MEMORY DATABASE */
+
+    .memories {
+        padding: 50px 15px 60px;
+    }
+
+    .memories h2 {
+        font-size: clamp(35px, 10vw, 50px);
+    }
+
+    .memory-intro {
+        font-size: 12px;
+
+        margin-bottom: 30px;
+    }
+
+    .memory-header {
+        padding: 13px 15px;
+
+        font-size: 8px;
+    }
+
+    .memory-file {
+        min-height: 80px;
+
+        grid-template-columns: 55px minmax(0, 1fr);
+
+        gap: 12px;
+
+        padding: 14px 15px;
+    }
+
+    .file-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .file-info strong {
+        font-size: 10px;
+    }
+
+    .file-info span {
+        font-size: 8px;
+    }
+
+    .file-size {
+        display: none;
+    }
+
+    .memory-terminal {
+        padding: 16px 15px;
+
+        font-size: 8px;
+    }
+
+
+    /* FINAL SYSTEM */
+
+    .final-system {
+        padding: 60px 18px 90px;
+    }
+
+    .system-header {
+        padding: 13px 15px;
+
+        font-size: 8px;
+    }
+
+    .system-content {
+        padding: 45px 20px;
+    }
+
+    .terminal-line {
+        font-size: 9px;
+    }
+
+    .system-content h2 {
+        font-size: 38px;
+
+        letter-spacing: -2px;
+    }
+
+    .final-message {
+        font-size: 11px;
+    }
+
+    .accept-btn {
+        padding: 13px 20px;
+
+        font-size: 10px;
+    }
+
+
+    /* EVENT DETAILS */
+
+    #event-details {
+        padding: 0 18px 60px;
+    }
+
+    #event-details.show {
+        display: flex !important;
+    }
+
+    #event-details .countdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* =====================================================
+   MEMORY LIGHTBOX
+===================================================== */
+
+.memory-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    backdrop-filter:
+        blur(8px);
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* =========================
+   LIGHTBOX ACTIVE
+========================= */
+
+.memory-lightbox.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================
+   LIGHTBOX IMAGE
+========================= */
+
+.memory-lightbox img {
+
+    max-width: min(900px, 90vw);
+
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    border: 1px solid #444444;
+
+    background: #090909;
+
+    box-shadow:
+        0 0 60px
+        rgba(255, 255, 255, 0.08);
+
+    transform:
+        scale(0.92);
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* IMAGE ZOOM EFFECT */
+
+.memory-lightbox.show img {
+
+    transform:
+        scale(1);
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        transparent;
+
+    border:
+        1px solid #444444;
+
+    color:
+        #ffffff;
+
+    font-family:
+        inherit;
+
+    font-size:
+        28px;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.3s ease;
+
+}
+
+
+.lightbox-close:hover {
+
+    background:
+        #ffffff;
+
+    color:
+        #000000;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================
+   LIGHTBOX INFO
+========================= */
+
+.lightbox-info {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    color:
+        #666666;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.lightbox-info p {
+
+    color:
+        #dddddd;
+
+}
+
+
+/* =========================
+   MEMORY FILE CLICK EFFECT
+========================= */
+
+.memory-file {
+
+    position: relative;
+
+}
+
+
+.memory-file::after {
+
+    content:
+        "OPEN ↗";
+
+    position: absolute;
+
+    right: 25px;
+
+    color:
+        #777777;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.memory-file:hover::after {
+
+    opacity: 1;
+
+}
+
+
+/* =========================
+   MOBILE LIGHTBOX
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory-lightbox {
+
+        padding:
+            30px 15px;
+
+    }
+
+
+    .memory-lightbox img {
+
+        max-width:
+            95vw;
+
+        max-height:
+            70vh;
+
+    }
+
+
+    .lightbox-close {
+
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size:
+            24px;
+
+    }
+
+
+    .lightbox-info {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            8px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    /* Biar OPEN tidak bentrok */
+
+    .memory-file::after {
+
+        display:
+            none;
+
+    }
+
+}
+/* =====================================================
+   MEMORY LIGHTBOX TERMINAL FRAME
+===================================================== */
+
+.memory-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.94);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* SHOW */
+
+.memory-lightbox.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================
+   TERMINAL WINDOW
+========================= */
+
+.memory-preview-window {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    max-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        #090909;
+
+    border:
+        1px solid #444444;
+
+    box-shadow:
+        0 0 80px rgba(255,255,255,0.08),
+        inset 0 0 30px rgba(255,255,255,0.02);
+
+    transform:
+        translateY(20px) scale(0.96);
+
+    transition:
+        transform 0.4s ease;
+
+    overflow:
+        hidden;
+}
+
+
+.memory-lightbox.show .memory-preview-window {
+
+    transform:
+        translateY(0) scale(1);
+
+}
+
+
+/* =========================
+   WINDOW HEADER
+========================= */
+
+.preview-header {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 52px;
+
+    padding: 0 18px;
+
+    border-bottom:
+        1px solid #292929;
+
+    color:
+        #777777;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.preview-header .lightbox-close {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    background:
+        transparent;
+
+    border:
+        1px solid #333333;
+
+    color:
+        #888888;
+
+    font-family:
+        inherit;
+
+    font-size:
+        20px;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.3s ease;
+
+}
+
+
+.preview-header .lightbox-close:hover {
+
+    background:
+        #ffffff;
+
+    color:
+        #000000;
+
+    border-color:
+        #ffffff;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================
+   IMAGE AREA
+========================= */
+
+.preview-image-area {
+
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #060606 70%
+        );
+
+    overflow:
+        hidden;
+
+}
+
+
+/* IMAGE */
+
+.preview-image-area img {
+
+    display: block;
+
+    max-width: 100%;
+
+    max-height: 65vh;
+
+    object-fit:
+        contain;
+
+    border:
+        1px solid #555555;
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,0.06);
+
+}
+
+
+/* =========================
+   CORNER DECORATION
+========================= */
+
+.preview-image-area {
+
+    position: relative;
+
+}
+
+
+.preview-image-area::before {
+
+    content:
+        "";
+
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    width: 20px;
+    height: 20px;
+
+    border-top:
+        1px solid #666666;
+
+    border-left:
+        1px solid #666666;
+
+}
+
+
+.preview-image-area::after {
+
+    content:
+        "";
+
+    position: absolute;
+
+    right: 15px;
+    bottom: 15px;
+
+    width: 20px;
+    height: 20px;
+
+    border-right:
+        1px solid #666666;
+
+    border-bottom:
+        1px solid #666666;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.lightbox-info {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 20px;
+
+    border-top:
+        1px solid #292929;
+
+    background:
+        #080808;
+
+}
+
+
+.lightbox-info p {
+
+    margin-bottom: 5px;
+
+    color:
+        #dddddd;
+
+    font-size:
+        12px;
+
+}
+
+
+.lightbox-info span {
+
+    color:
+        #555555;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.preview-status {
+
+    color:
+        #777777 !important;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory-lightbox {
+
+        padding: 15px;
+
+    }
+
+
+    .memory-preview-window {
+
+        max-height:
+            88vh;
+
+    }
+
+
+    .preview-header {
+
+        min-height:
+            46px;
+
+        padding:
+            0 14px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .preview-image-area {
+
+        padding:
+            15px;
+
+    }
+
+
+    .preview-image-area img {
+
+        max-height:
+            60vh;
+
+    }
+
+
+    .lightbox-info {
+
+        padding:
+            14px 15px;
+
+        gap:
+            15px;
+
+    }
+
+
+    .lightbox-info p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .preview-status {
+
+        font-size:
+            7px !important;
+
+    }
+
+}
