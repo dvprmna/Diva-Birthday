@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DIVA.exe | Birthday System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
+
+    <div class="loader">
+
+        <div class="terminal">
+
+            <p>> INITIALIZING BIRTHDAY SYSTEM...</p>
+            <p>> Loading memories...</p>
+            <p>> Loading happiness...</p>
+            <p>> Loading birthday.exe...</p>
+
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+
+            <p class="ready">
+                SYSTEM READY ✓
+            </p>
+
+            <button onclick="enterSystem()">
+                [ MASUKKAN SISTEM ]
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <main id="main">
+
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section class="hero">
+
+            <p class="code">
+                &lt;birthday_system&gt;
+            </p>
+
+            <h1>
+                HELLO,<br>
+                MY FRIENDS!
+            </h1>
+
+            <p class="subtitle">
+                You are invited to
+            </p>
+
+            <h2>
+                DIVA'S BIRTHDAY
+            </h2>
+
+            <p class="version">
+                SYSTEM UPDATE — VERSION 21.0
+            </p>
+
+
+            <!-- ACCESS INVITATION -->
+            <button
+                class="enter-btn"
+                id="access-invitation"
+                onclick="openInvitation()">
+
+                [ ACCESS INVITATION ]
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             INVITATION SECTION
+        ========================== -->
+
+        <section
+            class="invitation hidden"
+            id="invitation">
+
+
+            <!-- =========================
+                 EVENT INFORMATION
+            ========================== -->
+            <h2>
+                You're Officially Invited.
+            </h2>
+
+            <p class="invite-text">
+                Another beautiful year has been compiled into my life.
+                I would be truly happy if you became part of this
+                new chapter and celebrated this special day with me.
+            </p>
+
+
+
+            <!-- =========================
+                 BIRTHDAY GIRL PROFILE
+            ========================== -->
+
+            <section class="profile">
+
+
+                <div class="profile-window">
+
+                    <div class="window-header">
+
+                        <span>
+                            ● DIVA_PROFILE.exe
+                        </span>
+
+                        <span>
+                            v21.0
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-content">
+
+                       <div class="profile-avatar">
+
+                    <img
+                       src="assets/images/diva-profile.jpg"
+                       alt="Diva Profile">
+
+</div>
+
+
+                        <div class="profile-info">
+
+                            <p class="profile-label">
+                                USER_NAME
+                            </p>
+
+                            <h2>
+                                DIVA PERMANA PUTRI
+                            </h2>
+
+                            <p class="profile-description">
+                                21 years of existence.
+                                Still compiling...
+                                Still becoming...
+                                Still creating.
+                            </p>
+
+
+                            <div class="profile-stats">
+
+                                <div>
+                                    <span>AGE</span>
+                                    <strong>21</strong>
+                                </div>
+
+                                <div>
+                                    <span>STATUS</span>
+                                    <strong>ONLINE</strong>
+                                </div>
+
+                                <div>
+                                    <span>VERSION</span>
+                                    <strong>21.0</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-terminal">
+
+                        <p>
+                            &gt; USER_PROFILE_LOADED ✓
+                        </p>
+
+                        <p>
+                            &gt; AGE: 21
+                        </p>
+
+                        <p>
+                            &gt; NEW_VERSION: READY
+                        </p>
+
+                        <p class="cursor">
+                            &gt; _
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 MEMORY DATABASE
+            ========================== -->
+
+            <section class="memories">
+
+                <h2>
+                    My Memories
+                </h2>
+
+                <p class="memory-intro">
+                    A collection of moments,
+                    memories and little pieces
+                    that became part of my journey.
+                </p>
+
+
+                <div class="memory-window">
+
+
+                    <div class="memory-header">
+
+                        <span>
+                            ● DIVA_MEMORIES
+                        </span>
+
+                        <span>
+                            4 FILES
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="file-list">
+
+
+                        <!-- FILE 1 -->
+
+                        <div class="memory-file">
+
+                            <div class="file-icon">
+
+                                <img
+                                    src="assets/images/childhood.jpg"
+                                    alt="Childhood Memory">
+
+                            </div>
+
+                            <div class="file-info">
+
+                                <strong>
+                                    childhood.jpg
+                                </strong>
+
+                                <span>
+                                    A little version of me.
+                                </span>
+
+                            </div>
+
+                            <span class="file-size">
+                                2.4 MB
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- FILE 2 -->
+
+                        <div class="memory-file">
+
+                            <div class="file-icon">
+
+                                <img
+                                    src="assets/images/favorite_memory.jpg"
+                                    alt="Favorite Memory">
+
+                            </div>
+
+                            <div class="file-info">
+
+                                <strong>
+                                    favorite_memory.jpg
+                                </strong>
+
+                                <span>
+                                    One of the moments I treasure.
+                                </span>
+
+                            </div>
+
+                            <span class="file-size">
+                                3.1 MB
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- FILE 3 -->
+
+                        <div class="memory-file">
+
+                            <div class="file-icon">
+
+                                <img
+                                    src="assets/images/beautiful_people.jpg"
+                                    alt="Beautiful People">
+
+                            </div>
+
+                            <div class="file-info">
+
+                                <strong>
+                                    beautiful_people.jpg
+                                </strong>
+
+                                <span>
+                                    People who made life brighter.
+                                </span>
+
+                            </div>
+
+                            <span class="file-size">
+                                4.7 MB
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- FILE 4 -->
+
+                        <div class="memory-file">
+
+                            <div class="file-icon">
+
+                                <img
+                                    src="assets/images/version_21.jpg"
+                                    alt="Version 21">
+
+                            </div>
+
+                            <div class="file-info">
+
+                                <strong>
+                                    version_21.jpg
+                                </strong>
+
+                                <span>
+                                    Loading the newest version...
+                                </span>
+
+                            </div>
+
+                            <span class="file-size">
+                                5.2 MB
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="memory-terminal">
+
+                        <p>
+                            &gt; SCANNING MEMORY_DATABASE...
+                        </p>
+
+                        <p>
+                            &gt; 4 FILES FOUND ✓
+                        </p>
+
+                        <p>
+                            &gt; MEMORIES LOADED SUCCESSFULLY.
+                        </p>
+
+                        <p class="cursor">
+                            &gt; _
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 FINAL SYSTEM MESSAGE
+            ========================== -->
+
+            <section class="final-system">
+
+                <div class="system-window">
+
+                    <div class="system-header">
+
+                        <span>
+                            ● BIRTHDAY_CORE.exe
+                        </span>
+
+                        <span>
+                            v21.0
+                        </span>
+
+                    </div>
+
+
+                    <div class="system-content">
+
+                        <p class="terminal-line">
+                            &gt; ALL MEMORIES LOADED ✓
+                        </p>
+
+                        <p class="terminal-line">
+                            &gt; ALL SYSTEMS OPERATIONAL ✓
+                        </p>
+
+                        <p class="terminal-line">
+                            &gt; PREPARING BIRTHDAY...
+                        </p>
+
+                        <div class="system-divider"></div>
+
+
+                        <h2>
+                            One More Year.<br>
+                            One More Story.
+                        </h2>
+
+
+                        <p class="final-message">
+                            Thank you for being part of my journey.
+                            I hope you'll be there when the next chapter begins.
+                        </p>
+
+
+                        <button
+                            class="accept-btn"
+                            onclick="acceptInvitation()">
+
+                            [ ACCEPT INVITATION ]
+
+                        </button>
+
+
+                        <p
+                            id="accept-message"
+                            class="accept-message">
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 EVENT DETAILS
+                 HIDDEN BEFORE ACCEPT
+            ========================== -->
+
+            <section id="event-details" class="event-details">
+
+        
+                <div class="event-card">
+
+                    <!-- DATE -->
+
+                    <div class="event-item">
+
+                        <span>
+                            DATE
+                        </span>
+
+                        <h3>
+                            20 SEPTEMBER 2026
+                        </h3>
+
+                    </div>
+
+
+                    <!-- TIME -->
+
+                    <div class="event-item">
+
+                        <span>
+                            TIME
+                        </span>
+
+                        <h3>
+                            19:00 WIB
+                        </h3>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="event-item">
+
+                        <span>
+                            LOCATION
+                        </span>
+
+                        <h3>
+                            DIVA'S HOUSE, VILLA MUTIARA CIBITUNG
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOCATION BUTTON -->
+
+<a 
+    href="https://share.google/X5KPhgzN5lUdGDO4T"
+    target="_blank"
+    class="location-btn">
+
+    OPEN LOCATION ↗
+
+</a>
+
+
+                <!-- =========================
+                     COUNTDOWN
+                ========================== -->
+
+                <div class="countdown-box">
+
+                    <h3>
+                        BIRTHDAY SYSTEM WILL START IN
+                    </h3>
+
+
+                    <div class="countdown">
+
+
+                        <div class="time-box">
+
+                            <span id="days">
+                                00
+                            </span>
+
+                            <small>
+                                DAYS
+                            </small>
+
+                        </div>
+
+
+                        <div class="time-box">
+
+                            <span id="hours">
+                                00
+                            </span>
+
+                            <small>
+                                HOURS
+                            </small>
+
+                        </div>
+
+
+                        <div class="time-box">
+
+                            <span id="minutes">
+                                00
+                            </span>
+
+                            <small>
+                                MINUTES
+                            </small>
+
+                        </div>
+
+
+                        <div class="time-box">
+
+                            <span id="seconds">
+                                00
+                            </span>
+
+                            <small>
+                                SECONDS
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="system-status">
+
+                        STATUS:
+
+                        <span>
+                            WAITING FOR THE MOMENT...
+                        </span>
+
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+        <!-- =========================
+             GUEST DATABASE
+        ========================== -->
+
+      <section class="guest-database hidden-after-accept">
+
+            <p class="section-code">
+                GUEST_DATABASE
+            </p>
+
+            <h2>
+                Guest_List
+            </h2>
+
+            <p class="guest-intro">
+                A database containing the people
+                who will be part of this special chapter.
+            </p>
+
+
+            <div class="guest-window">
+
+
+                <!-- WINDOW HEADER -->
+
+                <div class="guest-header">
+
+                    <span>
+                        ● DIVA_GUEST_DATABASE
+                    </span>
+
+                    <span id="guest-count">
+                        20 GUESTS
+                    </span>
+
+                </div>
+
+
+                <!-- GUEST LIST -->
+
+                <div class="guest-list">
+
+
+                   <div class="guest-list">
+
+    <div class="guest-item">
+        <span>01</span>
+        <strong>RIFDA (TACI)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>02</span>
+        <strong>IIP (TACI)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>03</span>
+        <strong>TIARA (TACI)</strong>
+    </div>
+    
+    <div class="guest-item">
+        <span>04</span>
+        <strong>DEVI (TACI)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>05</span>
+        <strong>SELVI (TACI)</strong>
+    </div>
+
+     <div class="guest-item">
+        <span>06</span>
+        <strong>NONI (TACI)</strong>
+    </div>
+
+ <div class="guest-item">
+        <span>07</span>
+        <strong>AMEL (TACI)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>08</span>
+        <strong>ZULFA (TACI)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>09</span>
+        <strong>RIFKA (TACI)</strong>
+    </div>
+
+   <div class="guest-item">
+        <span>10</span>
+        <strong>Ale (UPB)</strong>
+    </div>
+
+     <div class="guest-item">
+        <span>11</span>
+        <strong>RIZKY (UPB)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>12</span>
+        <strong>Undiana(UPB)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>13</span>
+        <strong>Fauzy(UPB)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>14</span>
+        <strong>Naufal (UPB)</strong>
+    </div>
+
+     <div class="guest-item">
+        <span>15</span>
+        <strong>Albira (UPB)</strong>
+    </div>
+
+     <div class="guest-item">
+        <span>16</span>
+        <strong>Samuel (UPB)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>17</span>
+        <strong>Aril (UPB)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>18</span>
+        <strong>MAHARANI (LWC)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>19</span>
+        <strong>BETA (LWC)</strong>
+    </div>
+
+    <div class="guest-item">
+        <span>20</span>
+        <strong>SHAFNA (LWC)</strong>
+    </div>
+
+
+                <!-- TERMINAL -->
+
+                <div class="guest-terminal">
+
+                    <p>
+                        &gt; SCANNING GUEST_DATABASE...
+                    </p>
+
+                    <p>
+                        &gt; GUESTS LOADED SUCCESSFULLY ✓
+                    </p>
+
+                    <p class="cursor">
+                        &gt; _
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+<!-- =========================
+     MEMORY LIGHTBOX
+========================= -->
+
+<<!-- =========================
+     MEMORY LIGHTBOX
+========================= -->
+
+<div
+    id="memory-lightbox"
+    class="memory-lightbox">
+
+    <div class="memory-preview-window">
+
+
+        <!-- WINDOW HEADER -->
+
+        <div class="preview-header">
+
+            <span>
+                ● MEMORY_PREVIEW.exe
+            </span>
+
+            <button
+                id="lightbox-close"
+                class="lightbox-close"
+                aria-label="Close image">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- IMAGE AREA -->
+
+        <div class="preview-image-area">
+
+            <img
+                id="lightbox-image"
+                src=""
+                alt="Memory Preview">
+
+        </div>
+
+
+        <!-- WINDOW FOOTER -->
+
+        <div class="lightbox-info">
+
+            <div>
+
+                <p id="lightbox-title">
+                    memory.jpg
+                </p>
+
+                <span>
+                    MEMORY_DATABASE_PREVIEW
+                </span>
+
+            </div>
+
+            <span class="preview-status">
+                STATUS: OPEN ✓
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <audio id="bg-music" loop>
+    <source src="assets/music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
